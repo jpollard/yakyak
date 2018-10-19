@@ -174,6 +174,13 @@ templateView = (viewstate) ->
               }
               {
                   type: 'checkbox'
+                  label: i18n._('menu.view.conversation.disable.inline.pictures:Hide Inline Picture')
+                  checked: viewstate.hideInlinePictures
+                  enabled: viewstate.loggedin
+                  click: (it) -> action 'hideinlinepictures', it.checked
+              }
+              {
+                  type: 'checkbox'
                   label: i18n.__('menu.view.conversation.timestamp:Show Conversation Timestamp')
                   checked:viewstate.showConvTime
                   enabled: viewstate.loggedin && !viewstate.showConvMin
